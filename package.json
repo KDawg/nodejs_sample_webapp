@@ -1,15 +1,13 @@
 {
-  "name": "simple-webapp",
-  "version": "0.1.0",
+  "name": "hello-world-webapp",
+  "version": "0.3.0",
   "description": "Hello world in NodeJS",
   "main": "app.js",
   "scripts": {
-    "start": "NODE_ENV=dev node app.js",
-    "create_docker_image": "docker build -t hello-world .",
-    "start_docker_image": "docker run -p 49160:8080 -d hello-world",
-    "delete_docker_image": "docker image rm --force hello-world"
+    "start": "NODE_ENV=dev node app/app.js",
+    "watch": "nodemon NODE_ENV=dev node app/app.js"
   },
-  "author": "Ken",
+  "author": "Ken Tabor",
   "license": "UNLICENSED",
   "private": true,
   "dependencies": {
@@ -21,5 +19,12 @@
     "lodash": "^4.17.4",
     "morgan": "^1.8.1",
     "request": "^2.81.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.4"
+  },
+  "nodemonConfig": {
+    "ignore": ["test/*", "node_modules/*"],
+    "delay": "2500"
   }
 }

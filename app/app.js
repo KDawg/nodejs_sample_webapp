@@ -6,11 +6,12 @@ const bodyParser = require('body-parser');
 const hbs = require('hbs');
 const path = require('path');
 const config = require('./config');
+const routes = require('./routes.js');
 
 const app = express();
 
 function SetupHandlebars() {
-  app.set('views', path.join(__dirname, 'views'));
+  app.set('views', path.join(__dirname, '../views'));
   app.set('view engine', 'html');
   app.engine('html', hbs.__express);
 }
@@ -24,9 +25,8 @@ function SetupLogging() {
 
 function SetupParsingPublic() {
   app.use(bodyParser.urlencoded({ extended: true }));
-  app.use(express.static(path.join(__dirname, 'public')));
+  app.use(express.static(path.join(__dirname, '../public')));
 }
-
 
 function SetupServer() {
   SetupHandlebars();
@@ -35,9 +35,7 @@ function SetupServer() {
 }
 
 function SetupRoutes() {
-  app.get('/', (req, res) => {
-    res.render('main');
-  });
+  routes.setup(app);
 }
 
 function RunServer() {

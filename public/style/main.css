@@ -1,0 +1,19 @@
+
+body {
+  background-color: #b0b0b0;
+  color: #fff;
+  font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
+  padding: 2em 3em 2em 3em;
+}
+
+h1 {
+  font-size: 2.5em;
+}
+
+h2 {
+  font-size: 1.75em;
+}
+
+p {
+  font-size: 1.25em;
+}
