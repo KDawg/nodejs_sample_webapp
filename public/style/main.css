@@ -17,3 +17,8 @@ h2 {
 p {
   font-size: 1.25em;
 }
+
+.dateTime {
+  color: #5050a0;
+  font-style: italic;
+}

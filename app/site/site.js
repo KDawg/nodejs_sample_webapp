@@ -4,5 +4,9 @@ exports.index = (req, res) => {
 };
 
 exports.getHello = (req, res) => {
-  res.render('hello');
+  let currentTime = new Date();
+
+  res.render('hello', {
+    whenRendered: currentTime.toString()
+  });
 };
